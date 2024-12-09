@@ -1,6 +1,5 @@
-"use client"
+import Image from "next/image";
 import React from "react";
-import Image from "next/image"
 
 const chefs = [
   { name: "Tahmina Rumi", role: "Chef", image: "../../../public/chef1.jpeg" },
@@ -33,7 +32,7 @@ const ChefGrid = () => {
           >
             {/* Chef Image */}
             <div className="flex-1">
-              <img
+              <Image
                 src={chef.image}
                 alt={chef.name}
                 width={40}

@@ -1,14 +1,13 @@
-"use client"
-import React from "react";
-import Image from "next/image";
-import { experienceItems } from "../constants/Experience";
 
+import React from "react";
+import { experienceItems } from "../constants/Experience";
+import Image from "next/image";
 const ExperienceSection = () => {
   return (
     <div className="experience-container">
       {experienceItems.map((item, index) => (
         <div key={index} className="experience-item w-1/4">
-          <img
+          <Image
             src={item.src} 
             alt={item.label}
             className="rounded-lg"

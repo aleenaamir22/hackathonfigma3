@@ -1,5 +1,5 @@
 import React from 'react'
-import Image from 'next/image'
+import Image from 'next/image';
 
 const FoodCategory = () => {
   // Items array containing food details
@@ -23,7 +23,7 @@ const FoodCategory = () => {
           {items.map((item) => (
             <div key={item.id} className="relative">
               {/* Image of the food item */}
-              <img
+              <Image
                 src={item.img}
                 alt={item.label}
                 width={500}

@@ -1,8 +1,9 @@
-"use client"
 import { menuItems } from '@/constants/Menu'; 
 import { Coffee } from 'lucide-react';
 import Heading from '@/components/Heading';
 import Image from 'next/image';
+import menuImage from "../../public/menu.png"; // Import image directly
+
 export default function StarterMenu() {
   return (
     <section className="w-full mx-auto mt-[120px] px-4 sm:px-6 lg:px-8">
@@ -10,7 +11,7 @@ export default function StarterMenu() {
         {/* Images */}
         <div className="w-full lg:w-[448px] mb-8 lg:mb-0">
           <Image
-            src={require("../../public/menu.png")} // Fixed static image path
+            src={menuImage} // Using imported image
             alt="Starter dish"
             width={448}
             height={626}
@@ -30,9 +31,7 @@ export default function StarterMenu() {
               <div key={index} className="border-b border-dashed border-gray-300 pb-6">
                 <div className="flex justify-between items-start mb-2">
                   <h3
-                    className={`text-xl sm:text-2xl font-bold ${
-                      item.highlight ? 'text-[#FF9F0D]' : 'text-gray-800'
-                    }`}
+                    className={`text-xl sm:text-2xl font-bold ${item.highlight ? 'text-[#FF9F0D]' : 'text-gray-800'}`}
                   >
                     {item.name}
                   </h3>

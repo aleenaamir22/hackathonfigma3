@@ -1,30 +1,33 @@
-"use client"
-import React from 'react'
-import Image from 'next/image'
-import FoodCategory from '@/pages/Foodcategory';
-import ExperienceSection from '@/components/Experience';
-import Dessert from '@/components/Dessert';
-import OurChefs from '@/components/OurChef/page';
-import Menu from '@/components/menu/menu';
-import StarterMenu from '@/components/StartMenu';
-import PartnersAndClients from '@/components/PartnerClient';
-import ChefGrid from '@/components/OurChef/ChefGrid';
-import CheckOut from '@/pages/checkout/checkpage';
-import Error from '@/pages/404';
-import SignUpPage from '@/pages/signup/SignUp';
-import { FaCheck } from 'react-icons/fa';
+"use client";
 
+import React from "react";
+import Image from "next/image";
+import FoodCategory from "@/pages/Foodcategory";
+import OurChefs from "@/components/OurChef/page";
+import Menu from "@/components/menu/menu";
+import PartnersAndClients from "@/components/PartnerClient";
+import CheckOut from "@/pages/checkout/checkpage";
+import Error from "@/pages/404";
+import SignUpPage from "@/pages/signup/SignUp";
+import { FaCheck } from "react-icons/fa";
+import ExperienceSection from "@/components/Experience";
+import Dessert from "@/components/Dessert";
+import StarterMenu from "@/components/StartMenu";
 
-
+// Static paths for images in the public directory
+const foodImage = "/food.png";
+const foodPic1 = "/foodpic1.jpeg";
+const foodPic2 = "/foodpic2.jpeg";
+const foodPic3 = "/foodpic3.jpeg";
 
 const Page = () => {
   return (
     <div>
-       
+      {/* Hero Section */}
       <section className="bg-black px-4 md:px-20 flex flex-col md:flex-row items-center justify-between py-10 w-full">
         <div className="text-white md:w-1/2">
           <h1 className="text-orange-500 text-2xl md:text-4xl font-semibold">
-            It's Quick & Amusing!
+            It&apos;s Quick & Amusing!
           </h1>
           <h2 className="text-3xl md:text-5xl font-bold">
             The Art of <span className="text-orange-500">Speed</span> Food Quality
@@ -39,7 +42,7 @@ const Page = () => {
         </div>
         <div className="mt-6 md:mt-0">
           <Image
-            src={require("../../public/food.png")}
+            src={foodImage}
             alt="Hero Image"
             width={700}
             height={500}
@@ -48,6 +51,7 @@ const Page = () => {
         </div>
       </section>
 
+      {/* About Us Section */}
       <section className="bg-black px-4 md:px-20 flex flex-col md:flex-row items-center justify-between py-10">
         <div className="text-white md:w-1/2">
           <h1 className="text-orange-500 text-2xl md:text-4xl font-semibold">About Us</h1>
@@ -62,15 +66,15 @@ const Page = () => {
           </p>
           <ul className="mt-6 space-y-4">
             <li className="flex items-center">
-            <FaCheck className="text-orange-500 mr-2"/>
+              <FaCheck className="text-orange-500 mr-2" />
               Lacus nisi, et ac dapibus sit eu velit in consequat.
             </li>
             <li className="flex items-center">
-            <FaCheck className="text-orange-500 mr-2"/>
+              <FaCheck className="text-orange-500 mr-2" />
               Quisque diam pellentesque bibendum non dui volutpat fringilla.
             </li>
             <li className="flex items-center">
-            <FaCheck className="text-orange-500 mr-2"/>
+              <FaCheck className="text-orange-500 mr-2" />
               Lorem ipsum dolor sit amet, consectetur adipiscing elit.
             </li>
           </ul>
@@ -78,54 +82,55 @@ const Page = () => {
             See More
           </button>
         </div>
-        
+
         <div>
-        <div className='w-[600px]' >
+          <div className="w-[600px]">
+            <Image
+              alt="Eggs"
+              className="w-full object-cover h-[350px] object-center block opacity-90 rounded-md"
+              src={foodPic1}
+              width={530}
+              height={400}
+            />
+          </div>
+          <br />
+          <div className="flex justify-between items-center space-x-4">
+            <div className="w-[300px]">
               <Image
-                alt="Eggs"
-                className="w-full object-cover h-[350px] object-center block opacity-90 rounded-md"
-                src={require("../../public/foodpic1.jpeg")}
+                src={foodPic2}
+                alt="Coldrink"
+                className="w-full object-cover h-[300px] object-center block opacity-90 rounded-lg"
                 width={530}
                 height={400}
               />
             </div>
-            <br></br>
-            <div className="flex justify-between items-center space-x-4">
-  
-  <div className="w-[300px]">
-    <Image
-      alt="Coldrink"
-      className="w-full object-cover h-[300px] object-center block opacity-90 rounded-lg"
-      src={require("../../public/foodpic2.jpeg")}
-      width={530}
-      height={400}
-    />
-  </div>
-  <div className="w-[300px]">
-    <Image
-      alt="Sandwich"
-      className="w-full object-cover h-[300px] object-center block opacity-90 rounded-lg"
-      src={require("../../public/foodpic3.jpeg")}
-      width={530}
-      height={400}
-    />
-     </div>
-     </div>
-      </div>
-           
+            <div className="w-[300px]">
+              <Image
+                alt="Sandwich"
+                className="w-full object-cover h-[300px] object-center block opacity-90 rounded-lg"
+                src={foodPic3}
+                width={530}
+                height={400}
+              />
+            </div>
+          </div>
+        </div>
       </section>
-    
-    <FoodCategory/>
-     <OurChefs/>
-     <PartnersAndClients/>
-     <Menu/>
-    <ChefGrid/>
-    <SignUpPage/>
-    <CheckOut/>
-    <Error/>
+
+      {/* Other Sections */}
+      <FoodCategory />
+      <Menu />
+      <Dessert />
+      <StarterMenu />
+      <OurChefs />
+      <ExperienceSection />
+      <PartnersAndClients />
+      <Menu />
+      <SignUpPage />
+      <CheckOut />
+      <Error />
     </div>
   );
-}
+};
 
-
-export default Page
+export default Page;

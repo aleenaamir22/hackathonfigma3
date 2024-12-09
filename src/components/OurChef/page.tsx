@@ -1,12 +1,20 @@
-"use client"
 import React from "react";
-import Hero from "./Hero";
-import ChefGrid from "./ChefGrid";
 import Image from "next/image";
+import ChefGrid from "./ChefGrid";
+import HeroChef from "./Hero";
 
-const OurChefs = () => {
+// Import images for better handling in Next.js
+import chef1 from "../../../public/chef1.png";
+import chef2 from "../../../public/chef2.png";
+import chef3 from "../../../public/chef3.png";
+import chef4 from "../../../public/chef4.png";
+
+const OurChefs = () => { 
+
   return (
     <div>
+      <ChefGrid />
+      <HeroChef />
       <section className="bg-black md:px-[135px] py-[50px]">
         {/* Title Section */}
         <div className="flex flex-col justify-center items-center">
@@ -21,22 +29,22 @@ const OurChefs = () => {
         {/* Chefs Grid */}
         <div className="flex flex-col md:flex-row justify-center items-center gap-[20px] mt-[50px]">
           <Image
-            src={require("../../../public/chef1.png")}
+            src={chef1}
             alt="Chef 1"
             className="w-[200px] md:w-[305px] md:h-[280px] cursor-pointer transition-transform hover:scale-105"
           />
           <Image
-            src={require("../../../public/chef2.png")}
+            src={chef2}
             alt="Chef 2"
             className="w-[200px] md:w-[280px] md:h-[280px] cursor-pointer transition-transform hover:scale-105"
           />
           <Image
-            src={require("../../../public/chef3.png")}
+            src={chef3}
             alt="Chef 3"
             className="w-[200px] md:w-[280px] md:h-[280px] cursor-pointer transition-transform hover:scale-105"
           />
           <Image
-            src={require("../../../public/chef4.png")}
+            src={chef4}
             alt="Chef 4"
             className="w-[200px] md:w-[280px] md:h-[280px] cursor-pointer transition-transform hover:scale-105"
           />

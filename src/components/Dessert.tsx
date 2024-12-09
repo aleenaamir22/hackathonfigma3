@@ -1,8 +1,10 @@
-"use client"
-import { dessertItems } from '@/constants/Dessert'; // Import the actual data array
-import { Coffee } from 'lucide-react';
-import Heading from '@/components/Heading';
-import Image from 'next/image';
+"use client";
+
+import React from "react";
+import { dessertItems } from "@/constants/Dessert"; // Import the actual data array
+import { Coffee } from "lucide-react";
+import Heading from "@/components/Heading";
+import Image from "next/image";
 
 export default function Dessert() {
   return (
@@ -10,12 +12,11 @@ export default function Dessert() {
       <div className="container mx-auto py-10 sm:py-16 flex flex-col md:flex-row gap-8 md:gap-28">
         <div className="w-full md:w-1/2 mb-6 md:mb-0">
           <Image
-            src={require("../../public/desert.png")}
+            src="/desert.png" // Static path for image in public folder
             alt="Dessert dish"
             width={448}
             height={626}
             className="w-300 h-auto rounded-lg shadow-lg"
-            priority
           />
         </div>
 
@@ -32,7 +33,7 @@ export default function Dessert() {
                 <div className="flex justify-between items-start mb-2">
                   <h3
                     className={`text-xl sm:text-2xl font-bold ${
-                      item.highlight ? 'text-[#FF9F0D]' : 'text-gray-800'
+                      item.highlight ? "text-[#FF9F0D]" : "text-gray-800"
                     }`}
                   >
                     {item.name}
